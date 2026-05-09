@@ -1,0 +1,157 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#main{
+  display: flex;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  border: 5px solid #795a5a;
+  background: #60e6ed;
+}
+
+.left{
+  height: 100%;
+  width: 70%;
+  background: rgb(116, 222, 249);
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.right {
+  width: 30%;
+  height: 100%;
+  background: rgb(195, 243, 233);
+  border-radius: 15px;
+}
+
+.main-image{
+  height: 570px;
+  width: 580px;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 66%;
+  transform: translate(-50%, -50%);
+}
+
+.logo{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 8%;
+  width: 15%;
+  margin: 20px 20px;
+}
+
+.date{
+  position: absolute;
+  font-size: 20px;
+  left: 90px;
+  bottom: 120px;
+  font-family: halka Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  z-index: 1;
+}
+
+.description{
+  position: absolute;
+  font-size: 20px;
+  left: 40px;
+  bottom: 220px;
+  text-align: justify;
+  height: 150px;
+  width: 500px;
+}
+
+.watermark {
+  position: absolute;
+  bottom: 0;
+  width: 150px;
+  object-fit: cover;
+  margin-left: 150px;
+  margin-bottom: 20px;
+  color: rgb(3, 31, 65);
+}
+
+.title{
+  position: absolute;
+  left: 40px;
+  top: 100px;
+  font-size: 50px;
+  color: rgb(17, 32, 52);
+}
+
+.parent{
+  position: relative;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.child{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 150px;
+  margin-left: 200px;
+}
+
+.image1{
+  object-fit: cover;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 3px solid black;
+}
+
+.image2{
+  object-fit: cover;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 3px solid black;
+
+}
+
+.image3{
+  object-fit: cover;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 3px solid black;
+}
+
+.image1:hover{
+  cursor: pointer;
+  transform: scale(1.5);
+  transition: all 0.5s ease-in-out;
+  background: #ce4343;
+  border: 3px solid #bcef06;
+}
+
+.image2:hover{
+  cursor: pointer;
+  transform: scale(1.5);
+  transition: all 0.5s ease-in-out;
+  background: #ce4343;
+  border: 3px solid #bcef06;
+}
+
+.image3:hover{
+  cursor: pointer;
+  transform: scale(1.5);
+  transition: all 0.5s ease-in-out;
+  background: #ce4343;
+  border: 3px solid #bcef06;
+}
