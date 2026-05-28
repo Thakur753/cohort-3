@@ -1,0 +1,703 @@
+@font-face {
+      font-family: 'fightree';
+      src: url('./figtree_n4.3c0838aba1701047e60be6a99a1b0a40ce9b8419.woff2');
+}
+@font-face {
+      font-family: 'midnight';
+      src: url('./midnight-sans-rd-12-medium-trial.otf');
+}
+@font-face {
+      font-family: 'reckless';
+      src: url('./RecklessCondensedS-TRIAL-Book.woff');
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+main{
+      width: 100%;
+      min-height: 100vh;
+      background: rgb(216, 215, 215);
+      position: relative;
+}
+nav{
+      margin-top: 1vh;
+      width: 100%;
+      height: 9vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.2rem;
+      position: absolute;
+      overflow: hidden;
+      background-color: #fff;
+      z-index: 1;
+      border: #000 1px solid;
+      border-radius: 1rem;
+}
+nav i{
+      display: none;
+}
+.nav-part-1{
+      display: flex;
+      gap: 1vw;
+      align-items: center;
+      padding: 0.8vw;
+      cursor: pointer;
+}
+.nav-part-1 h3{
+      font-weight: 400;
+      display: block;
+      font-size: clamp(0.8rem,2vw,1.4rem);
+      white-space: nowrap;
+      font-family: 'reckless';
+}
+.nav-part-1 h3::after{
+      content: '';
+      display: block;
+      width: 0;
+      height: 1px;
+      background: #000;
+      transition: width .3s;
+}
+.nav-part-1 h3:hover::after{
+      width: 100%;
+}
+.nav-part-2{
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+}
+.nav-part-2 img{
+      width: 15vw;
+      height: 7vh;
+}
+.nav-part-3{
+      display: flex;
+      gap: 1vw;
+      align-items: center;
+      padding: 0.8vw;
+      cursor: pointer;
+}
+.nav-part-3 h3{
+      font-weight: 300;
+      display: block;
+      font-size: clamp(0.8rem,2vw,1.4rem);
+      white-space: nowrap;
+      font-family: 'reckless';
+}
+.nav-part-3 svg{
+      display: none;
+}
+.nav-part-3 h3::after{
+      content: '';
+      display: block;
+      width: 0;
+      height: 1px;
+      background: #000;
+      transition: width .3s;
+}
+.nav-part-3 h3:hover::after{
+      width: 100%;
+}
+@media screen and (max-width: 768px) {
+      nav i{
+            cursor: pointer;
+            padding: 1rem;
+            display: block;
+      }
+      .nav-part-1{
+            display: none;
+      }
+      .nav-part-3 svg{
+            cursor: pointer;
+            display: block;
+      }
+      .nav-part-3 h3{
+            display: none;
+      }
+}
+#section-1{
+      width: 100%;
+      height: 95vh;
+      background-image: url('https://www.twoleavestea.com/cdn/shop/files/AlpineBerry.webp?v=1774284236&width=2250.0');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
+      padding: 4rem 3rem;
+      gap: 1rem;
+      text-align: start;
+      border-bottom: 1px solid #000;
+}
+#section-1 h1{
+    width: 35%;
+    font-size: clamp(3rem,5vw,3.1rem);
+    font-family: Reckless;
+    color: white;
+    font-weight: 500;
+    overflow-wrap: break-word;
+
+}
+#section-1 p{
+    width: 45%;
+    font-size: clamp(1rem,1vw,1rem);
+    font-family: Figtree;
+    font-weight: 400;       
+    color: white;
+    font-family: 'figtree', sans-serif;
+    overflow-wrap: break-word;
+}
+#section-1 button{
+    cursor: pointer;
+    width: 13rem;
+    padding: 1rem 2rem;
+    border: none;
+    background-color: #2A2857;
+    color: white;
+    border-radius: 1.8rem;
+    font-size: clamp(1.2rem,1.5vw,1.5rem);
+    font-weight: 200;
+    font-family: 'figtree', sans-serif;
+}
+#section-1 button:hover{
+    background-color: wheat;
+    color: black;
+    border: 0.15vw solid black;
+    transition: all 0.3s ease-in-out;
+}
+#section-2{
+      width: 100%;
+      height: 170vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      background: whitesmoke;
+      border-bottom: 1px solid #000;
+}
+#section-2 button-2{
+    cursor: pointer;
+    width: 13rem;
+    padding: 1rem 1rem;
+    border: none;
+    background-color: #2A2857;
+    color: white;
+    border-radius: 1.8rem;
+    font-size: clamp(0.8rem,1.5vw,1.2rem);
+    font-weight: 200;
+    font-family: 'figtree', sans-serif;
+    text-align: center;
+}
+#section-2 button-2:hover{
+    background-color: wheat;
+    color: black;
+    border: 0.15vw solid black;
+    transition: all 0.3s ease-in-out;
+}
+#section-2 h1{
+      width: 55%;
+      font-size: clamp(3rem,2.5vw,4.5rem);
+      font-family: 'reckless';
+      font-weight: 400;
+      text-align: center;
+      color: #232323;
+}
+#section-2 button{
+      min-height: 2.5rem;
+      cursor: pointer;
+      padding: 0.25rem;
+      border: none;
+      background-color: #DAAEEA;
+      color: rgb(35, 35, 35);
+      border: 1px solid black;
+      border-radius: 0.375rem;
+      font-size: 4.5vw;
+      font-weight: 600;
+      font-family: 'midnight', sans-serif;
+      transform: rotate(-4deg);
+      letter-spacing: 0.2vw;
+}
+#article-1{
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      position: relative;
+      gap: 1vw;
+      padding: 1vw;
+}
+.card-1{
+      width: 25vw;
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: start;
+      text-align: start;
+}
+.card-1 h3{
+      font-size: clamp(1.6rem,1.5vw,1.6rem);
+      font-family: 'reckless', sans-serif;
+      font-weight: 400;
+      color: #232323;
+}
+.card-1 h5{
+      font-size: clamp(1rem,1.5vw,2.5rem);
+      font-family: 'figtree', sans-serif;
+      font-weight: 100;
+      color: #262626;
+}
+.card-1 p{
+      font-size: clamp(0.7rem,1.5vw,0.8rem);
+      font-family: 'midnight';
+      font-weight: 100;
+      color: #313131;
+}
+.card{
+      width: 100%;
+      height: 65%;
+      border: 1px solid #000;
+      border-radius: 0.5rem;
+      background: rgb(188, 238, 113);
+      position: relative;
+      padding: 1rem;
+}
+.upper{
+      width: 100%;
+      height: 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
+.text{
+      cursor: pointer;
+      width: 10vw;
+      padding: 0.2rem;
+      border: none;
+      background-color: #e0dffd;
+      color: black;
+      border-radius: 0.20rem;
+      font-size: clamp(0.8rem,1.5vw,1.5rem);
+      font-weight: 600;
+      letter-spacing: 0.1rem;
+      text-align: center;
+      font-family: 'midnight', sans-serif;
+}
+.card-img{
+      width: 100%;
+      height: 75%;
+}
+.card-img:hover{
+      scale: 1.3;
+      transition: all 0.8s ease-in-out;
+}
+.add{
+      width: 20%;
+      height: 18%;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #000;
+      border-radius: 0.4rem;
+      background: rgb(255, 255, 255);
+      font-size: clamp(0.5rem,1.5vw,1.5rem);
+}
+.add:hover{
+      background: rgb(26, 50, 86);
+      color: white;
+      transition: all 0.3s ease-in-out;
+}
+#section-3{
+      width: 100%;
+      height: 120vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+      gap: 2vh;
+      background: whitesmoke;
+      border: 1px solid #000;
+}
+#section-3 .up{
+      width: 70%;
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 4vh;
+}
+#section-3 .up h2{
+      width: 80%;
+      font-size: clamp(3rem,2.5vw,4.5rem);
+      font-family: 'reckless';
+      font-weight: 400;
+      text-align: center;
+      color: #232323;
+}
+#section-3 .up span{
+      cursor: pointer;
+      padding: 0.25rem 1rem;
+      background-color: #fe995b;
+      color: rgb(35, 35, 35);
+      border: 1px solid black;
+      border-radius: 0.375rem;
+      font-size: 4.5vw;
+      font-weight: 600;
+      font-family: 'midnight', sans-serif;
+      transform: rotate(-4deg);
+      letter-spacing: 0.1vw;
+}
+.up input{
+      height: 30%;
+      width: 70%;
+      border: 1px solid #000;
+      border-radius: 1rem;
+      background-color: rgba(250, 242, 227, 0.87);
+      color: rgb(35, 35, 35);
+      font-size: 2.5rem;
+      padding: 1rem;
+      font-family: 'reckless', sans-serif;
+      font-weight: 100;
+}
+#section-3 .down{
+      width: 90vw;
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: start;
+      position: relative;
+      overflow: hidden;
+
+}
+.down h2{
+      font-size: clamp(0.8rem,1.5vw,1rem);
+      font-family: 'fightree';
+      font-weight: 100;
+      color: #232323;
+}
+.btn{
+      height: 80%;
+      width: 100%;
+      display: flex;
+      justify-content: start;
+      align-items: start;
+      flex-wrap: wrap;
+      gap: 0.5vw;
+}
+.down span{
+      cursor: pointer;
+      background-color: #a4f9fce4;
+      color: rgb(35, 35, 35);
+      border: 1px solid black;
+      border-radius: 0.375rem;
+      font-size: clamp(0.3rem,1.5vw,1.3rem);
+      font-weight: 600;
+      font-family: 'reckless', sans-serif;
+      padding: 0.7rem 0.7rem;
+}
+.down span:hover{
+      background: #000;
+      color: #fff;
+      transition: all 0.3s ease-in-out;
+}
+#section-4{
+      width: 100%;
+      height: 140vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      border: 1px solid #000;
+      background-image: url(https://jk-nishad-72.github.io/Cohot3.0/Practice-sessions/Practice-sess-4/assets/asset%2023.jpeg);
+      background-size: cover;
+      position: relative;
+      padding: 3vh;
+}
+#section-4 h3{
+      font-size: 10vw;
+      font-family: 'midnight', sans-serif;
+      font-weight: 600;
+      color: #bbbabadc;
+      text-align: center;
+      text-shadow: 0.1rem 0.1rem 0.1rem #000;
+      animation: textAnime 8s ease-in-out infinite;
+}
+@keyframes textAnime{
+      0%{
+            transform: translateY(5vh);
+      }
+      50%{
+            transform: translateY(-3rem);
+      }
+      100%{
+            transform: translateY(5vh);
+      }
+}
+#section-4 p{
+      font-size: clamp(1.2rem,2.5vw,4.2rem);
+      font-family: 'figtree', sans-serif;
+      font-weight: 200;
+      color: #c5c3c3;
+      text-align: center;
+}
+#section-4 .img{
+    position: absolute;
+    top: 0;
+    right: 2%;
+    width: 11.5vw;
+    height: 25vh;
+    animation: floatAnime 4s ease-in-out infinite;
+}
+@keyframes floatAnime{
+      0%{
+            transform: translateY(0);
+      }
+      50%{
+            transform: translateY(-4.5rem);
+      }
+      100%{
+            transform: translateY(0);
+      }
+}
+.gif{
+      width: 50%;
+      height: 30%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+}
+.gif-1{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
+.content{
+      width: 100%;
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+}
+.content-img{
+      width: 60%;
+      height: 60%;
+}
+.content h4{
+      font-size: clamp(0.8rem,2.5vw,1rem);
+      font-family: 'reckless';
+      font-weight: 600;
+      text-align: center;
+      color: #bdbcbc;
+}
+#section-4 span{
+      cursor: pointer;
+      padding: 0.25rem 0.5rem;
+      background-color: #96cbffdc;
+      color: rgb(35, 35, 35);
+      border: 1px solid black;
+      border-radius: 0.375rem;
+      font-size: 4vw;
+      font-weight: 600;
+      font-family: 'midnight', sans-serif;
+      transform: rotate(-4deg);
+      letter-spacing: 0.1vw;
+}
+#section-4 span-1{
+    cursor: pointer;
+    width: 13rem;
+    padding: 1rem 1.5rem;
+    border: none;
+    background-color: #535090d4;
+    color: white;
+    border-radius: 1.8rem;
+    font-size: clamp(0.8rem,1.5vw,1.3rem);
+    font-weight: 200;
+    font-family: 'figtree', sans-serif;
+    text-align: center;
+}
+#section-4 span-1:hover{
+    background-color: rgba(245, 222, 179, 0.746);
+    color: black;
+    border: 0.15vw solid black;
+    transition: all 0.3s ease-in-out;
+}
+#section-5{
+      width: 100%;
+      height: 100vh;
+      border: 1px solid #000;
+      background-image: url(https://www.twoleavestea.com/cdn/shop/files/1440.webp?v=1771593223&width=1350.0);
+      background-size: cover;
+      padding: 2vw;
+}
+#section-5 div-1{
+      height: 100%;
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      background: rgb(252, 123, 53);
+      border: 1px solid black;
+      border-radius: 1rem;
+      padding: 2vw;
+}
+div-1 .high{
+      font-size: 3.5vw;
+      font-family: 'reckless';
+      font-weight: 400;
+      text-align: start;
+      color: #a29393;
+      text-shadow: 0.1rem 0.1rem 0.1rem #000;
+      text-transform:uppercase;
+}
+div-1 .low{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+}
+div-1 .low p{
+      font-size: clamp(0.8rem,1.5vw,1.3rem);
+      font-family: 'figtree', sans-serif;
+      font-weight: 400;
+      color: #c5c3c3;
+      text-align: start;
+      letter-spacing: 0.1em;
+}
+div-1 .low span{
+      cursor: pointer;
+      background-color: #25255ce4;
+      color: rgb(243, 213, 213);
+      border: 1px solid black;
+      border-radius: 2rem;
+      font-size: clamp(0.3rem,1.5vw,1.3rem);
+      font-weight: 600;
+      font-family: 'reckless', sans-serif;
+      padding: 0.7rem 4rem;
+      text-align: center;
+      letter-spacing: 0.1em;
+}
+div-1 .low span:hover{
+      background: #5d4646;
+      color: #fff;
+      transition: all 0.3s ease-in-out;
+}
+#section-6{
+      width: 100%;
+      height: 200vh;
+      border: 1px solid #000;
+      padding: 2vw;
+      background: lightblue;
+      background-image: url(https://jk-nishad-72.github.io/Cohot3.0/Practice-sessions/Practice-sess-4/assets/footer-extended_1.png);
+      background-size: 200vw 40%;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+}
+.conect{
+      width: 90%;
+      height: 50%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
+.conect .right{
+      width: 60%;
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      padding: 2vw;
+}
+.conect .right h1{
+      font-size: 4vw;
+      font-family: 'reckless';
+      font-weight: 800;
+      color: #232323;
+      text-align: center;
+      letter-spacing: 0.2vw;
+      text-align: start;
+}
+.conect .right p{
+      font-size: 2vw;
+      font-family: 'figtree', sans-serif;
+      font-weight: 100;
+      color: #232323;
+      text-align: center;
+      letter-spacing: 0.1vw;
+      text-align: start;
+}
+.conect .right input{
+      height: 11vh;
+      width: 30vw;
+      font-size: 2.2vw;
+      border-radius: 0.5rem;
+      border: 1px solid #000;
+      padding: 0.5rem;
+      font-family: 'reckless', sans-serif;
+}
+.conect .right button{
+      cursor: pointer;
+      background-color: #25255ce4;
+      color: rgb(243, 213, 213);
+      border: 1px solid black;
+      border-radius: 2rem;
+      font-size: clamp(0.3rem,1.5vw,1.3rem);
+      font-weight: 600;
+      font-family: 'reckless', sans-serif;
+      padding: 0.7rem 4rem;
+      text-align: center;
+      letter-spacing: 0.1em;
+}
+.conect .right button:hover{
+      background: #66946f;
+      color: #fff;
+      transition: all 0.3s ease-in-out;
+}
+.conect .left img{
+      width: 5vw;
+      height: 11vh;
+      border: 1.5px solid rgb(68, 63, 63);
+      border-radius: 0.5rem;
+      padding: 0.3rem;
+}
+.conect .left img:hover{
+      scale: 1.1;
+      transition: all 0.3s ease-in-out;
+}
+#section-6 .img-10{
+      width: 45vw;
+      height: 30vh;
+      position: absolute;
+      top: 45%;
+}
+footer{
+      font-size: 1vw;
+      font-family: 'reckless', sans-serif;
+      font-weight: 100;
+      color: #464545;
+      text-align: center;
+}

@@ -1,75 +1,12 @@
-
-/* Image container ko relative banana zaroori hai */
-.card-image-container {
-    position: relative;
-    overflow: hidden; /* Taaki overlay card se bahaar na dikhe */
-    border-radius: 15px; /* Jo bhi aapke card ka radius ho */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'helvetica neue';
 }
-
-.card-img {
-      height: 200px;
-    width: 100px;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-/* Overlay Styling (Half Background Color) */
-.image-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100px;
-    height: 50%; /* Pure image ka half cover karega */
-    background: transparent; /* Dark semi-transparent background */
-    backdrop-filter: blur(4px); /* Ek premium premium glassmorphism look ke liye */
-    
-    /* Center alignment for icons */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    /* Default state (Hidden) */
-    opacity: 0;
-    transform: translateY(100%);
-    transition: all 0.4s ease-in-out;
-}
-
-/* Icons Initial State */
-.overlay-icons {
-    display: flex;
-    gap: 15px;
-    transform: translateY(20px);
-    transition: transform 0.4s ease-in-out 0.1s; /* Thoda delay smoothness ke liye */
-}
-
-.icon {
-    font-size: 24px;
-    color: #fff;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-/* Individual Icon Hover Effect */
-.icon:hover {
-    transform: scale(1.2); /* Icon par cursor le jaane se wo thoda bada hoga */
-}
-
-/* -------------------------------------- */
-/* HOVER EFFECTS (Asli jadoo yahan hai) */
-/* -------------------------------------- */
-
-/* Card par hover hote hi overlay dikhega aur upar aayega */
-.card-image-container:hover .image-overlay {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Hover hote hi icons thode upar slide hokar pop-up honge */
-.card-image-container:hover .overlay-icons {
-    transform: translateY(0);
-}
-
-/* (Optional) Hover par image thodi zoom-in hogi detailed look ke liye */
-.card-image-container:hover .card-img {
-    transform: scale(1.05);
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: #000;
 }
