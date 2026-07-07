@@ -220,3 +220,120 @@
 //       console.log(b)
 // }
 // console.log(a)
+// function add(a, b){
+//       return a + b
+// }
+// console.log(add(10, 20))
+// function square(a){
+//       return a * a
+// }
+// console.log(square(5))
+// function checkEvenOdd(a){
+//       if(a % 2 == 0){
+//             return "even"
+//       }
+//       return "odd"
+// }
+// console.log(checkEvenOdd(5))
+// function max(a, b){
+//       if(a > b){
+//             return a
+//       }
+//       return b
+// }
+// console.log(max(10, 20))
+// function isEligible(a){
+//       if(a >= 18){
+//             return "eligible to vote"
+//       }
+//       return "not eligible to vote"
+// }
+// console.log(isEligible(17))
+// for(var i=1; i<=10; i++){
+//       if(i % 2 == 0){
+//             console.log(i, "is even")
+//       }
+// }
+// let sum = 0
+// for(var i=1; i<=100; i++){
+//       sum += i
+// }
+// console.log(sum)
+// function table(a){
+//       for(var i=1; i<=10; i++){
+//             console.log(a,  'x' , i, " = ", a*i)
+//       }
+// }
+// table(5)
+// function countDigits(a){
+//       var count = 0
+//       while ( a>0 ){
+//             a = Math.floor(a/10)
+//             count++
+//       }
+//       return count;
+// }
+// console.log(countDigits(12345215441684541548675345748745487864857867486))
+// function reverseString(a){
+//       return a.split("").reverse().join("")
+// }
+// console.log(reverseString("hello"))
+// function countVowel(b){
+//       var count = b.match(/[aiu]/gi)
+//       return count ? count.length : 0
+// }
+// console.log(countVowel("hello world"))
+// function isPalindrome(a){
+//       if(a === a.split("").reverse().join("")){
+//             return "true"
+//       }
+//       return "false"
+// }
+// console.log(isPalindrome("madam"))
+// function capital(a){
+//       return a
+//       .split(' ')
+//       .map(c => c.charAt(0).toUpperCase() + c.slice(1))
+//       .join(' ')
+// }
+// console.log(capital("hello world"))
+// function countChar(a,char){
+//       let count = 0
+//       for ( var i = 0; i < a.length; i++){
+//             if(a[i] === char){
+//                   count++
+//             }
+//       }
+//       return count
+// }
+// console.log(countChar("javascript", "a"))
+// var a = [10,20,30,40,50]
+// var b = Math.max(...a)
+// console.log(b)
+// var a = [10,20,30,40,50]
+// var b = Math.min(...a)
+// console.log(b)
+// var a = [10,20,30,40,50]
+// var b = a.reduce((c,d) => c + d)
+// console.log(b)
+// var a = [1,2,3,4,5]
+// for(var i=0; i<a.length; i++){
+//       if(a[i] % 2 == 0){
+//             console.log(a[i], "is even")
+//       }
+// }
+// var a = [1,2,3,4,5,4,4,4,5,5,5,,6,6,6,7,7,7,8,8,8,9,9,9]
+// var b = a.filter((c,d) => a.indexOf(c)===d)
+// console.log(b)
+// var a = [33,55,44,60,70,80,90,95]
+// console.log("Highest marks : ", Math.max(...a))
+// console.log("Lowest marks : ", Math.min(...a))
+// console.log("Average marks : ", (a.reduce((c,d) => c + d)/a.length))
+// console.log("Total marks : ", (a.reduce((c,d) => c + d)))
+"use strict";
+
+function show() {
+  console.log(this);
+}
+
+show();
