@@ -1,0 +1,842 @@
+/* ==========================================================================
+   1. GLOBAL STYLES & RESET
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+/* ==========================================================================
+   2. LOGIN & REGISTER SECTIONS
+   ========================================================================== */
+.Login, 
+.register-container {
+    background: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.register-container { 
+    display: none; 
+}
+
+.login-container, 
+.register-card {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+h1 { 
+    font-size: 32px; 
+    font-weight: 600; 
+    color: #1a1a1a; 
+    margin-bottom: 10px; 
+}
+
+h2 { 
+    font-size: 24px; 
+    color: #000; 
+    font-weight: 600; 
+    margin-bottom: 8px; 
+}
+
+.subtitle { 
+    font-size: 14px; 
+    color: #4a4a4a; 
+    margin-bottom: 24px; 
+}
+
+.login-form, 
+.register-form { 
+    text-align: left; 
+}
+
+
+/* --- Forms & Inputs --- */
+.form-group { 
+    margin-bottom: 20px; 
+}
+
+.form-group label { 
+    display: block; 
+    font-size: 14px; 
+    color: #333; 
+    margin-bottom: 8px; 
+    font-weight: 500; 
+}
+
+.form-group input { 
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #ced4da; 
+    border-radius: 6px; 
+    font-size: 14px; 
+    outline: none; 
+    transition: border-color 0.2s; 
+}
+
+.login-form .form-group input { 
+    background-color: #eef3ff; 
+}
+
+.login-form .form-group input:focus { 
+    border-color: #0056b3; 
+}
+
+.register-form .form-group input:focus { 
+    border-color: #28a745; 
+}
+
+
+/* --- Form Buttons & Footers --- */
+.login-btn, 
+.register-btn { 
+    width: 100%; 
+    padding: 12px; 
+    border: none; 
+    border-radius: 6px; 
+    font-size: 14px; 
+    font-weight: 600; 
+    cursor: pointer; 
+    margin-top: 10px; 
+    transition: background-color 0.2s; 
+    color: #fff; 
+}
+
+.login-btn { 
+    background-color: #0056b3; 
+}
+
+.login-btn:hover { 
+    background-color: #004494; 
+}
+
+.register-btn { 
+    background-color: #28a745; 
+    padding: 14px; 
+    font-size: 16px; 
+}
+
+.register-btn:hover { 
+    background-color: #218838; 
+}
+
+.register-text, 
+.login-footer { 
+    font-size: 13px; 
+    color: #333; 
+    margin-top: 20px; 
+    text-align: center; 
+}
+
+.register-text a, 
+.login-footer a { 
+    color: #0056b3; 
+    text-decoration: none; 
+}
+
+.register-text a:hover, 
+.login-footer a:hover { 
+    text-decoration: underline; 
+}
+
+
+/* ==========================================================================
+   3. MASTER DASHBOARD GRID WRAPPER (.andar)
+   ========================================================================== */
+.andar {
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 64px 1fr;
+    grid-template-areas:
+        'left heading'
+        'left center';
+}
+
+
+/* ==========================================================================
+   4. TOP NAVIGATION BAR (NAV)
+   ========================================================================== */
+nav {
+    grid-area: heading;
+    background-color: #1a2237; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 24px;
+    border-bottom: 1px solid #1e293b;
+}
+
+.nav-right { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+}
+
+.user-name { 
+    color: #94a3b8; 
+    font-size: 14px; 
+    font-weight: 500; 
+}
+
+.nav-logout-btn { 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    background: transparent; 
+    border: 1px solid #334155; 
+    color: #94a3b8; 
+    padding: 8px 16px; 
+    border-radius: 6px; 
+    font-size: 14px; 
+    cursor: pointer; 
+    transition: 0.2s; 
+}
+
+.nav-logout-btn:hover { 
+    border-color: #ef4444; 
+    color: #ef4444; 
+    background: rgba(239, 68, 68, 0.05); 
+}
+
+
+/* ==========================================================================
+   5. SIDEBAR NAVIGATION (ASIDE)
+   ========================================================================== */
+aside {
+    grid-area: left;
+    background-color: #1d2538; 
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    color: #ffffff;
+    border-right: 1px solid #222c41;
+}
+
+.brand-section { 
+    margin-bottom: 32px; 
+}
+
+.brand-logo { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.brand-logo span { 
+    font-size: 22px; 
+    color: #3b82f6; 
+}
+
+.brand-logo h3 { 
+    font-size: 18px; 
+    font-weight: 700; 
+}
+
+.brand-subtitle { 
+    font-size: 11px; 
+    color: #64748b; 
+    margin-top: 2px; 
+}
+
+.sidebar-links { 
+    list-style: none; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 4px; 
+    flex-grow: 1; 
+}
+
+.sidebar-links li a { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    padding: 10px 14px; 
+    color: #94a3b8; 
+    text-decoration: none; 
+    font-size: 14px; 
+    font-weight: 500; 
+    border-radius: 6px; 
+}
+
+.sidebar-links li a:hover, 
+.sidebar-links li.active a { 
+    color: #3b82f6; 
+    background-color: rgba(59, 130, 246, 0.08); 
+}
+
+.sidebar-actions { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+    margin-top: auto; 
+}
+
+.add-btn { 
+    width: 100%; 
+    padding: 10px; 
+    background-color: #3b82f6; 
+    color: #fff; 
+    border: none; 
+    border-radius: 6px; 
+    font-size: 14px; 
+    font-weight: 600; 
+    cursor: pointer; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 8px; 
+}
+
+.add-btn:hover { 
+    background-color: #2563eb; 
+}
+
+
+/* ==========================================================================
+   6. MAIN CONTENT WRAPPER & HEADERS
+   ========================================================================== */
+.content {
+    grid-area: center;
+    background-color: #1c243a;
+    padding: 32px;
+    overflow-y: auto;
+}
+
+.content-wrapper { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 24px; 
+    width: 100%;
+}
+
+.content-header h2 { 
+    font-size: 24px; 
+    color: #ffffff; 
+    font-weight: 600; 
+}
+
+.content-header p { 
+    color: #64748b; 
+    font-size: 13px; 
+}
+
+.section-box { 
+    background-color: #161d2d; 
+    border: 1px solid #222c41; 
+    border-radius: 8px; 
+    padding: 20px; 
+}
+
+.section-box h3 { 
+    font-size: 16px; 
+    color: #fff; 
+    margin-bottom: 20px; 
+    font-weight: 600; 
+}
+
+
+/* ==========================================================================
+   7. FINANCIAL OVERVIEW CARDS
+   ========================================================================== */
+.cards-grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 16px; 
+}
+
+.card { 
+    background-color: #161d2d; 
+    border: 1px solid #222c41; 
+    padding: 20px; 
+    border-radius: 8px; 
+}
+
+.icon-box { 
+    width: 36px; 
+    height: 36px; 
+    border-radius: 6px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 16px; 
+    margin-bottom: 12px; 
+}
+
+.blue-bg { background: rgba(59, 130, 246, 0.1); }
+.green-bg { background: rgba(16, 185, 129, 0.1); }
+.red-bg { background: rgba(239, 68, 68, 0.1); }
+.purple-bg { background: rgba(139, 92, 246, 0.1); }
+
+.card-title { 
+    color: #64748b; 
+    font-size: 12px; 
+    font-weight: 500; 
+}
+
+.card-val { 
+    font-size: 24px; 
+    color: #fff; 
+    font-weight: 700; 
+    margin-top: 4px; 
+}
+
+.text-green { color: #10b981; }
+.text-red { color: #ef4444; }
+
+
+/* ==========================================================================
+   8. MIDDLE GRID (CHART & PREFERENCES SPLIT)
+   ========================================================================== */
+.middle-grid { 
+    display: grid; 
+    grid-template-columns: 2fr 1fr; 
+    gap: 16px; 
+}
+
+
+/* --- Cash Flow Chart Styling --- */
+.chart-content { 
+    display: flex; 
+    gap: 12px; 
+    height: 220px; 
+}
+
+.y-axis { 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    color: #475569; 
+    font-size: 11px; 
+    text-align: right; 
+    width: 25px; 
+}
+
+.chart-main { 
+    flex: 1; 
+    background: #0f1524; 
+    border-radius: 6px; 
+    border: 1px solid #222c41; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    padding: 12px; 
+}
+
+.legend { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 8px; 
+    color: #64748b; 
+    font-size: 11px; 
+}
+
+.legend span { 
+    width: 12px; 
+    height: 8px; 
+    border-radius: 2px; 
+}
+
+.lg-inc { background: #10b981; }
+.lg-exp { background: #ef4444; }
+
+.chart-footer-label { 
+    text-align: center; 
+    color: #475569; 
+    font-size: 11px; 
+}
+
+
+/* --- Preferences Box & Reset Button --- */
+.pref-box { 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+}
+
+.toggle-row { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    color: #fff; 
+    font-size: 14px; 
+}
+
+.reset-btn { 
+    width: 100%; 
+    padding: 12px; 
+    background: #fef2f2; 
+    border: 1px solid #fee2e2; 
+    color: #991b1b; 
+    border-radius: 6px; 
+    font-weight: 600; 
+    cursor: pointer; 
+    text-align: center; 
+    font-size: 14px; 
+}
+
+
+/* --- Custom Toggle Switch --- */
+.switch { 
+    position: relative; 
+    display: inline-block; 
+    width: 40px; 
+    height: 20px; 
+}
+
+.switch input { 
+    opacity: 0; 
+    width: 0; 
+    height: 0; 
+}
+
+.slider { 
+    position: absolute; 
+    cursor: pointer; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background-color: #334155; 
+    transition: .3s; 
+    border-radius: 20px; 
+}
+
+.slider:before { 
+    position: absolute; 
+    content: ""; 
+    height: 14px; 
+    width: 14px; 
+    left: 3px; 
+    bottom: 3px; 
+    background-color: white; 
+    transition: .3s; 
+    border-radius: 50%; 
+}
+
+input:checked + .slider { 
+    background-color: #3b82f6; 
+}
+
+input:checked + .slider:before { 
+    transform: translateX(20px); 
+}
+
+
+/* ==========================================================================
+   9. TRANSACTION DATA TABLE SECTION
+   ========================================================================== */
+.table-filters { 
+    display: flex; 
+    gap: 12px; 
+    margin-bottom: 16px; 
+}
+
+.search-wrap { 
+    display: flex; 
+    align-items: center; 
+    color: #64748b; 
+    font-size: 14px; 
+    background: #0f1524; 
+    border: 1px solid #222c41; 
+    padding: 8px 12px; 
+    border-radius: 6px; 
+    width: 240px; 
+}
+
+.search-wrap input { 
+    background: transparent; 
+    border: none; 
+    outline: none; 
+    color: #fff; 
+    margin-left: 8px; 
+    width: 100%; 
+    font-size: 13px; 
+}
+
+.type-dropdown { 
+    background: #0f1524; 
+    border: 1px solid #222c41; 
+    color: #fff; 
+    padding: 8px 16px; 
+    border-radius: 6px; 
+    outline: none; 
+    font-size: 13px; 
+    cursor: pointer; 
+}
+
+.table-container { 
+    overflow-x: auto; 
+    width: 100%; 
+}
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    text-align: left; 
+}
+
+th { 
+    color: #475569; 
+    font-size: 11px; 
+    font-weight: 600; 
+    padding: 10px 12px; 
+}
+
+td { 
+    padding: 14px 12px; 
+    border-top: 1px solid #222c41; 
+    color: #94a3b8; 
+    font-size: 13px; 
+}
+
+
+/* ==========================================================================
+   10. ADD TRANSACTION MODAL DISPLAY (POPUP)
+   ========================================================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; 
+}
+
+.modal-card {
+    background-color: #161d2d; 
+    border: 1px solid #222c41;
+    width: 100%;
+    max-width: 480px;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h3 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: #64748b;
+    font-size: 22px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #fff;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.modal-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.modal-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.modal-group label {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.modal-group input,
+.modal-group select {
+    background-color: #0f1524; 
+    border: 1px solid #222c41;
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.2s;
+}
+
+.modal-group input:focus,
+.modal-group select:focus {
+    border-color: #3b82f6;
+}
+
+.modal-group select option {
+    background-color: #161d2d;
+    color: #fff;
+}
+
+.save-btn {
+    background-color: #fff; 
+    color: #0d121f;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.2s;
+    text-align: center;
+}
+
+.save-btn:hover {
+    background-color: #e2e8f0;
+}
+
+
+/* ==========================================================================
+   11. SETTINGS PAGE STYLES
+   ========================================================================== */
+.profile-box-settings {
+    max-width: 600px; 
+    width: 100%;
+}
+
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.settings-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 16px;
+}
+
+.save-changes-btn {
+    background-color: #ffffff;
+    color: #0d121f;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-start; 
+    transition: background-color 0.2s;
+}
+
+.save-changes-btn:hover {
+    background-color: #e2e8f0;
+}
+
+/* ==========================================================================
+   12. LIGHT MODE OVERRIDES
+   ========================================================================== */
+body.light-theme {
+    background-color: #f8f9fa;
+}
+
+body.light-theme main {
+    background-color: #f8f9fa;
+}
+
+body.light-theme nav {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+body.light-theme .user-name {
+    color: #334155;
+}
+
+body.light-theme aside {
+    background-color: #ffffff;
+    border-right: 1px solid #e2e8f0;
+    color: #0f172a;
+}
+
+body.light-theme .brand-logo h3 {
+    color: #0f172a;
+}
+
+body.light-theme .sidebar-links li a {
+    color: #475569;
+}
+
+body.light-theme .content {
+    background-color: #f1f5f9;
+}
+
+body.light-theme .content-header h2 {
+    color: #0f172a;
+}
+
+body.light-theme .section-box, 
+body.light-theme .card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+
+body.light-theme .section-box h3,
+body.light-theme .card-val {
+    color: #0f172a;
+}
+
+body.light-theme .chart-main,
+body.light-theme .search-wrap,
+body.light-theme .type-dropdown {
+    background-color: #f8f9fa;
+    border: 1px solid #e2e8f0;
+    color: #0f172a;
+}
+
+body.light-theme .search-wrap input {
+    color: #0f172a;
+}
+
+body.light-theme td {
+    color: #334155;
+    border-top: 1px solid #e2e8f0;
+}
